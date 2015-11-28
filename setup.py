@@ -4,12 +4,10 @@ with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 requirements = [
-    # TODO: add any additional package requirements here
     'charlesbot',
 ]
 
 test_requirements = [
-    # TODO: add any additional package test requirements here
     'asynctest',
     'coverage',
     'flake8',
