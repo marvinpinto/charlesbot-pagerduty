@@ -12,7 +12,7 @@ Pagerduty
     :target: LICENSE.txt
     :alt: Software License
 
-A Charlesbot__ plugin to do a really awesome thing!
+A Charlesbot__ plugin that interacts with Pagerduty and does some cool shit.
 
 __ https://github.com/marvinpinto/charlesbot
 
@@ -23,10 +23,13 @@ How does this work
 This plugin adds the following ``!help`` targets:
 
 .. code:: text
-    !command - Do a thing!
 
-TODO: Fill in a description about what this plugin does and how it works.
-Screenshots are helpful, too!
+    !oncall - Find out who's on-call right now
+
+This will query Pagerduty and print out a list of all the on-call folks (for
+all the schedules).
+
+.. image:: /images/oncall.png?raw=true
 
 
 Installation
@@ -36,7 +39,7 @@ Installation
 
     pip install charlesbot-pagerduty
 
-Instructions for how to run Charlesbot are over at https://github.com/marvinpinto/charlesbot!
+Instructions for how to run Charlesbot are over at https://github.com/marvinpinto/charlesbot.
 
 
 Configuration
@@ -51,7 +54,16 @@ entry to the ``main`` section:
       enabled_plugins:
         - 'charlesbot_pagerduty.pagerduty.Pagerduty'
 
-TODO: If there is any more configuration, mention it here.
+Then add a ``pagerduty`` dictionary block that looks something like:
+
+.. code:: yaml
+
+    pagerduty:
+      token: 'E7px6VVr3PVHZPJq51oa'
+      subdomain: 'acme'
+
+Note that you will need a valid Pagerduty API token for the **token** value, a
+*read-only* token should suffice here.
 
 Sample config file
 ~~~~~~~~~~~~~~~~~~
@@ -62,6 +74,10 @@ Sample config file
       slackbot_token: 'xoxb-1234'
       enabled_plugins:
         - 'charlesbot_pagerduty.pagerduty.Pagerduty'
+
+    pagerduty:
+      token: 'E7px6VVr3PVHZPJq51oa'
+      subdomain: 'acme'
 
 
 License
