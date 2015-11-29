@@ -30,8 +30,8 @@ class TestSendOncallResponse(asynctest.TestCase):
                                       oncall_users=[])
         attachment = SlackAttachment(
             color="#36a64f",
-            fallback="*Schedule1* - could not determine who's on call :disappointed:",  # NOQA
-            text="*Schedule1* - could not determine who's on call :disappointed:",  # NOQA
+            fallback="*Schedule1* - :no_entry_sign:",
+            text="*Schedule1* - :no_entry_sign:",
             mrkdwn_in=["text"]
         )
         expected = call('chat.postMessage',
@@ -98,8 +98,8 @@ class TestSendOncallResponse(asynctest.TestCase):
                                       oncall_users=[])
         attachment = SlackAttachment(
             color="#36a64f",
-            fallback="*Schedule1* - could not determine who's on call :disappointed:\n*Schedule2* - could not determine who's on call :disappointed:",  # NOQA
-            text="*Schedule1* - could not determine who's on call :disappointed:\n*Schedule2* - could not determine who's on call :disappointed:",  # NOQA
+            fallback="*Schedule1* - :no_entry_sign:\n*Schedule2* - :no_entry_sign:",  # NOQA
+            text="*Schedule1* - :no_entry_sign:\n*Schedule2* - :no_entry_sign:",  # NOQA
             mrkdwn_in=["text"]
         )
         expected = call('chat.postMessage',
@@ -122,8 +122,8 @@ class TestSendOncallResponse(asynctest.TestCase):
                                       oncall_users=[])
         attachment = SlackAttachment(
             color="#36a64f",
-            fallback="*Schedule1* - User 1\n*Schedule2* - could not determine who's on call :disappointed:",  # NOQA
-            text="*Schedule1* - User 1\n*Schedule2* - could not determine who's on call :disappointed:",  # NOQA
+            fallback="*Schedule1* - User 1\n*Schedule2* - :no_entry_sign:",
+            text="*Schedule1* - User 1\n*Schedule2* - :no_entry_sign:",
             mrkdwn_in=["text"]
         )
         expected = call('chat.postMessage',
