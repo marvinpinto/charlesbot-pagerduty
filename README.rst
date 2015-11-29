@@ -29,7 +29,7 @@ This plugin adds the following ``!help`` targets:
 This will query Pagerduty and print out a list of all the on-call folks (for
 all the schedules).
 
-.. image:: /images/oncall.png?raw=true
+.. image:: https://raw.githubusercontent.com/marvinpinto/charlesbot-pagerduty/master/images/oncall.png
 
 
 Installation
