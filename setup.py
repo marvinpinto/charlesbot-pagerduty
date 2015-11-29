@@ -15,7 +15,7 @@ test_requirements = [
 
 setup(
     name='charlesbot-pagerduty',
-    version='1.0.0',
+    version='1.0.1',
     description="A charlesbot pagerduty plugin",
     long_description=readme,
     author="Marvin Pinto",
