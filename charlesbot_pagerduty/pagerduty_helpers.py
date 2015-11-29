@@ -64,7 +64,7 @@ def send_oncall_response(slack_connection, schedules, channel_id):
     for schedule in schedules:
         oncall_people = ", ".join(sorted(user.full_name for user in schedule.oncall_users))  # NOQA
         if not oncall_people:
-            oncall_people = "could not determine who's on call :disappointed:"
+            oncall_people = ":no_entry_sign:"
         message.append("*%s* - %s" % (schedule.name, oncall_people))
     final_msg = "\n".join(message)
     attachment = SlackAttachment(color="#36a64f",
